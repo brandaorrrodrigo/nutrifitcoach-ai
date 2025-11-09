@@ -1,15 +1,15 @@
-ï»¿# âœ… CHECKLIST DEPLOY - NUTRIFITCOACH
+# ? CHECKLIST DEPLOY - NUTRIFITCOACH
 
-## ðŸ“‹ ANTES DO DEPLOY
+## ?? ANTES DO DEPLOY
 
-### CÃ³digo
+### Código
 - [ ] npm run build sem erros
-- [ ] Todas as pÃ¡ginas testadas
+- [ ] Todas as páginas testadas
 - [ ] Sem erros no console do navegador
 - [ ] Funcionalidades testadas manualmente
 
 ### Stripe
-- [ ] Modo PRODUÃ‡ÃƒO ativado no dashboard
+- [ ] Modo PRODUÇÃO ativado no dashboard
 - [ ] Produto Mensal criado (R$ 100, 15 dias trial)
 - [ ] Produto Anual criado (R$ 1000, 30 dias trial)
 - [ ] Price IDs copiados
@@ -18,42 +18,42 @@
 
 ### Ambiente
 - [ ] .env.production criado com valores REAIS
-- [ ] STRIPE_SECRET_KEY (sk_live_...)
+- [ ] STRIPE_SECRET_KEY (<YOUR_STRIPE_SECRET_KEY>...)
 - [ ] NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY (pk_live_...)
 - [ ] STRIPE_PRICE_ID_MONTHLY (price_...)
 - [ ] STRIPE_PRICE_ID_YEARLY (price_...)
 - [ ] ANTHROPIC_API_KEY
 - [ ] NEXT_PUBLIC_SITE_URL
 
-## ðŸš€ DEPLOY
+## ?? DEPLOY
 
 ### Git
-- [ ] RepositÃ³rio GitHub criado
+- [ ] Repositório GitHub criado
 - [ ] .gitignore configurado (.env.local, .env.production)
-- [ ] CÃ³digo commitado
+- [ ] Código commitado
 
 ### Vercel
 - [ ] Conta criada em vercel.com
 - [ ] Projeto importado do GitHub
-- [ ] VariÃ¡veis de ambiente configuradas
+- [ ] Variáveis de ambiente configuradas
 - [ ] Deploy executado
 - [ ] Site abrindo em .vercel.app
 
-### DomÃ­nio
-- [ ] DomÃ­nio adicionado no Vercel
+### Domínio
+- [ ] Domínio adicionado no Vercel
 - [ ] DNS configurado (A ou CNAME)
-- [ ] PropagaÃ§Ã£o DNS concluÃ­da
+- [ ] Propagação DNS concluída
 - [ ] SSL ativo (HTTPS)
 - [ ] Site abrindo em nutrifitcoach.com.br
 
-## âœ… PÃ“S-DEPLOY
+## ? PÓS-DEPLOY
 
-### Testes em ProduÃ§Ã£o
-- [ ] Abrir todas as pÃ¡ginas
+### Testes em Produção
+- [ ] Abrir todas as páginas
 - [ ] Testar cadastro
 - [ ] Testar login
-- [ ] Gerar cardÃ¡pio
-- [ ] Testar pagamento (usar cartÃ£o de teste do Stripe)
+- [ ] Gerar cardápio
+- [ ] Testar pagamento (usar cartão de teste do Stripe)
 - [ ] Testar responsividade (mobile/tablet/desktop)
 
 ### Monitoramento
@@ -62,50 +62,50 @@
 - [ ] Configurar alertas de erro (Sentry)
 
 ### Legal
-- [ ] PolÃ­tica de Privacidade publicada
+- [ ] Política de Privacidade publicada
 - [ ] Termos de Uso publicados
-- [ ] PÃ¡gina de Contato funcionando
+- [ ] Página de Contato funcionando
 
 ### Marketing
-- [ ] PÃ¡gina de preÃ§os revisada
+- [ ] Página de preços revisada
 - [ ] Links de redes sociais
 - [ ] Meta tags (SEO) configuradas
 
-## ðŸ“Š PRIMEIRA SEMANA
+## ?? PRIMEIRA SEMANA
 
 - [ ] Monitorar erros diariamente
 - [ ] Verificar pagamentos
 - [ ] Responder suporte
 - [ ] Coletar feedback
-- [ ] Ajustar conforme necessÃ¡rio
+- [ ] Ajustar conforme necessário
 
 ---
 
-## ðŸ†˜ EM CASO DE PROBLEMA
+## ?? EM CASO DE PROBLEMA
 
 ### Site fora do ar
 1. Verificar Vercel dashboard
 2. Ver logs de erro
-3. Verificar variÃ¡veis de ambiente
-4. Fazer rollback se necessÃ¡rio
+3. Verificar variáveis de ambiente
+4. Fazer rollback se necessário
 
-### Pagamentos nÃ£o funcionam
+### Pagamentos não funcionam
 1. Verificar webhook do Stripe
 2. Ver logs do Stripe
 3. Verificar chaves de API
 4. Testar em modo de teste
 
-### Erros no cÃ³digo
+### Erros no código
 1. Ver logs no Vercel
 2. Fazer fix
 3. Commit & push
-4. Deploy automÃ¡tico
+4. Deploy automático
 
 ---
 
 **Data deploy:** _____________
 
-**URL ProduÃ§Ã£o:** https://nutrifitcoach.com.br
+**URL Produção:** https://nutrifitcoach.com.br
 
 **URL Vercel:** https://______.vercel.app
 
