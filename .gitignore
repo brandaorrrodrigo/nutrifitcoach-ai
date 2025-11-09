@@ -20,3 +20,41 @@ library_vector_db*.json
 /data/vector_db/**
 /public/embeddings/**
 /tmp/**
+# === Segredos / env (não versionar) ===
+.env
+.env.*
+!.env.example
+*.env
+.env.local
+env-local.txt
+*.pem
+*.key
+*.pfx
+*.crt
+*.cer
+
+# === Artefatos locais grandes ===
+library_vector_db.json
+.next/
+out/
+node_modules/
+# === Segredos / env ===
+.env
+.env.*
+!.env.example
+*.env
+.env.local
+env-local.txt
+*.pem
+*.key
+*.pfx
+*.crt
+*.cer
+
+# === Artefatos locais grandes ===
+library_vector_db.json
+.next/
+out/
+node_modules/
+.vercel/
+replacements.txt
