@@ -1,0 +1,46 @@
+﻿import { NextRequest, NextResponse } from "next/server";
+
+const OLLAMA = "http://127.0.0.1:11434/api/generate";
+const VISION_MODEL = process.env.OLLAMA_VISION_MODEL || "llava:latest";
+
+export async function POST(req: NextRequest) {
+  try {
+    const body = await req.json();
+    const { imageBase64, language = "pt-BR" } = body || {};
+    if (!imageBase64) {
+      return NextResponse.json({ error: "imageBase64 ausente" }, { status: 400 });
+    }
+
+    const prompt =
+`Você é um avaliador nutricional.
+Objetivo:
+1) Identifique os itens do prato pela foto.
+2) Estime macros aproximados (proteína, carboidrato, gordura) e kcal da refeição (faixa).
+3) Classifique aderência ao plano (OK | parcial | furou) e diga o porquê.
+4) Sugira até 3 substituições equivalentes (em 1 frase curta cada).
+Responda em ${language}.`;
+
+    let responseText = "";
+    try {
+      const r = await fetch(OLLAMA, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          model: VISION_MODEL,
+          prompt,
+          images: [imageBase64],
+          stream: false
+        })
+      });
+      if (!r.ok) throw new Error("Vision model not available");
+      const data = await r.json();
+      responseText = data?.response || "";
+    } catch {
+      responseText = "Não consegui usar o modelo de visão agora. Envie a foto novamente ou descreva sua refeição que eu avalio por texto.";
+    }
+
+    return NextResponse.json({ analysis: responseText });
+  } catch (e) {
+    return NextResponse.json({ error: "Erro interno em /api/vision" }, { status: 500 });
+  }
+}
