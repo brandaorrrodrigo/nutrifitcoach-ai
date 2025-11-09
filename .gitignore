@@ -1,3 +1,13 @@
+# build/cache
+.next/
+node_modules/
+.vercel/
+# dumps e bases locais
+library_vector_db.json
+library_vector_db.*.json
+*.sqlite
+*.db
+# envs
 .env
 .env.*
 !.env.example
